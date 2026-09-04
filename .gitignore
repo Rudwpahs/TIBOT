@@ -1,0 +1,7 @@
+api_key.json
+.cache/
+.pythonlibs/
+extracted/
+__pycache__/
+*.pyc
+.venv/
