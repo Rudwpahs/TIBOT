@@ -22,3 +22,5 @@ jobs:
         run: python -m compileall -q .
       - name: CLI smoke test
         run: python app.py --help
+      - name: Legacy modules import without secrets
+        run: env -u TIBOT_NEIS_API_KEY python -c "import SchoolApi"

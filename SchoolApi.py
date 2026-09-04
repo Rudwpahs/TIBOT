@@ -5,7 +5,6 @@ import filemanager as fm
 class SchoolApi:
 
     params = {
-        "KEY": fm.read_api_key("neis"),
         "Type": "json",
     }
 
@@ -20,6 +19,7 @@ class SchoolApi:
     def get_data(self):
         URL = SchoolApi.base_url + self.sub_url
         self.params.update(SchoolApi.params)
+        self.params["KEY"] = fm.read_api_key("neis")
         self.params.update(SchoolApi.schoolinfo)
         response = requests.get(URL, params=self.params)
         # print(response.text)
